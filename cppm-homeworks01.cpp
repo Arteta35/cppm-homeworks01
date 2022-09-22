@@ -21,31 +21,50 @@ int *create_array(int* rows, ifstream & f_in) {
 
 void print_array_1(int rows, int *arr, ofstream *f_out) {
 
-    *f_out << rows << endl;
+    if (rows < 1) {
 
-    for (int i = 1; i < rows; i++) {
+        cout << "Некорректный размер массива." << endl;
 
-        *f_out << arr[i] << " ";
+    }
+    else {
+
+        *f_out << rows << endl;
+
+        for (int i = 1; i < rows; i++) {
+
+            *f_out << arr[i] << " ";
+
+        }
+
+        *f_out << arr[0] << endl;
 
     }
 
-    *f_out << arr[0] << endl;
-
+   
 }
 
 void print_array_2(int rows, int *arr, ofstream *f_out) {
 
-    *f_out << rows << endl;
 
-    *f_out << arr[rows - 1] << " ";
+    if (rows < 1) {
 
-    for (int i = 0; i < rows-1; i++) {
+        cout << "Некорректный размер массива." << endl;
 
-        *f_out << arr[i] << " ";
+    }
+    else {
+
+        *f_out << rows << endl;
+
+        *f_out << arr[rows - 1] << " ";
+
+        for (int i = 0; i < rows - 1; i++) {
+
+            *f_out << arr[i] << " ";
+        }
+
+        *f_out << endl;
     }
 
-    *f_out << endl;
- 
 }
 
 
